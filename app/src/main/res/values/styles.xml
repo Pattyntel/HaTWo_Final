@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="AppTheme" parent="Theme.Design.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <!-- texto del input text-->
+        <item name="android:textColorPrimary">@android:color/black</item>
+        <!-- color del cursor, linea y etiqueta de los EditText-->
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <!--Etiqueta flotante-->
+    <style name="AppTheme.FloatingLabel" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@color/colorTeal</item>
+        <item name="android:textSize">@dimen/floating_label</item>
+    </style>
+
+    <!--Campo de texto-->
+    <style name="EditText" parent="AppTheme">
+        <!-- cursor y línea normal-->
+        <item name="colorControlNormal">@color/colorIndigo</item>
+        <!-- cursor y línea con foco-->
+        <item name="colorControlActivated">@color/colorTeal</item>
+    </style>
+
+</resources>
