@@ -8,8 +8,10 @@ import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import com.weiwangcn.betterspinner.library.material.MaterialBetterSpinner;
 
 import org.udls.masterweb.hatwo.R;
 
@@ -17,6 +19,8 @@ public class ActivityAltaUsuario extends Activity {
 
     private EditText inputName, inputEmail, inputPassword, inputPhone, inputSex;
     private TextInputLayout inputLayoutName, inputLayoutEmail, inputLayoutPassword, inputLayoutPhone, inputLayoutSex;
+
+    String[] SPINNERLIST = {"Femenino", "Masculino", "Otro"};
 
 
     @Override
@@ -44,6 +48,12 @@ public class ActivityAltaUsuario extends Activity {
         inputPassword.addTextChangedListener(new MyTextWatcher(inputPassword));
         inputEmail.addTextChangedListener(new MyTextWatcher(inputEmail));
         inputEmail.addTextChangedListener(new MyTextWatcher(inputEmail));
+
+        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this,
+                android.R.layout.simple_dropdown_item_1line, SPINNERLIST);
+        MaterialBetterSpinner materialDesignSpinner = (MaterialBetterSpinner)
+                findViewById(R.id.input_sex);
+        materialDesignSpinner.setAdapter(arrayAdapter);
     }
 
     private void requestFocus(View view) {
