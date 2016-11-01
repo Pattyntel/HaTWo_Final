@@ -69,6 +69,6 @@ public class ActivityLogin extends Activity {
 
     private void Registrarse(){
         Intent intent = new Intent(this, ActivityAltaUsuario.class);
-        startActivity(intent);
-    }
+    startActivity(intent);
+}
 }

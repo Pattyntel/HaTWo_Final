@@ -1,6 +1,7 @@
 package org.udls.masterweb.hatwo.gui;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
@@ -28,6 +29,7 @@ public class ActivityAcceso extends AppCompatActivity {
     private EditText inputEmail, inputPassword;
     private TextInputLayout inputLayoutEmail, inputLayoutPassword;
     private Button btnSignUp;
+    private Button btnRegister;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,8 +45,9 @@ public class ActivityAcceso extends AppCompatActivity {
 
         inputEmail = (EditText) findViewById(R.id.input_email);
         inputPassword = (EditText) findViewById(R.id.input_password);
-        btnSignUp = (Button) findViewById(R.id.btn_signup);
 
+        btnSignUp = (Button) findViewById(R.id.btn_signup);
+        btnRegister = (Button) findViewById(R.id.btn_register);
 
         inputEmail.addTextChangedListener(new MyTextWatcher(inputEmail));
         inputPassword.addTextChangedListener(new MyTextWatcher(inputPassword));
@@ -55,6 +58,15 @@ public class ActivityAcceso extends AppCompatActivity {
                 submitForm();
             }
         });
+
+        btnRegister.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Register();
+            }
+        });
+
+
     }
 
 
@@ -74,7 +86,7 @@ public class ActivityAcceso extends AppCompatActivity {
         Toast.makeText(getApplicationContext(), "Bienvenido!", Toast.LENGTH_SHORT).show();
     }
 
-       private boolean validateEmail() {
+    private boolean validateEmail() {
         String email = inputEmail.getText().toString().trim();
 
         if (email.isEmpty() || !isValidEmail(email)) {
@@ -102,6 +114,11 @@ public class ActivityAcceso extends AppCompatActivity {
 
     private static boolean isValidEmail(String email) {
         return !TextUtils.isEmpty(email) && android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches();
+    }
+
+    private void Register(){
+        Intent intent = new Intent(this, ActivityAltaUsuario.class);
+        startActivity(intent);
     }
 
     private void requestFocus(View view) {
@@ -135,4 +152,6 @@ public class ActivityAcceso extends AppCompatActivity {
             }
         }
     }
+
+
 }

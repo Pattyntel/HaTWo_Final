@@ -1,5 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+ <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:layout_scrollFlags="scroll|enterAlways"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+    </android.support.design.widget.AppBarLayout>
+
+
+<!--<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -7,85 +27,86 @@
     android:paddingLeft="16dp"
     android:paddingRight="16dp"
     android:paddingTop="16dp"
-    tools:context=".gui.ActivityAltaUsuario">
+    tools:context=".gui.ActivityAltaUsuario">-->
 
-    <LinearLayout
+     <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="128dp"
         android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true"
-        android:id="@+id/datosUsuario">
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingTop="60dp"
+        android:id="@+id/datosUsuario"
+        android:theme="@style/EditText">
 
 
+         <android.support.design.widget.TextInputLayout
+             android:id="@+id/input_layout_name"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content">
 
-        <android.support.design.widget.TextInputLayout
-            android:id="@+id/txtNombre"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:hint="Nombre">
-            <!--app:hintTextAppearance="@style/FloatingLabel">-->
+             <EditText
+                 android:id="@+id/input_name"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:inputType="textPersonName"
+                 android:hint="@string/hint_name"/>
+         </android.support.design.widget.TextInputLayout>
 
-            <android.support.design.widget.TextInputEditText
-                android:id="@+id/editTextNombre"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textPersonName"
-                android:theme="@style/EditText"/>
+         <android.support.design.widget.TextInputLayout
+             android:id="@+id/input_layout_email"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content">
 
-        </android.support.design.widget.TextInputLayout>
+             <EditText
+                 android:id="@+id/input_email"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:inputType="textEmailAddress"
+                 android:hint="@string/hint_email"/>
+         </android.support.design.widget.TextInputLayout>
 
-        <android.support.design.widget.TextInputLayout
-            android:id="@+id/txtEmail"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:hint="Correo Electrónico">
-            <!--app:hintTextAppearance="@style/FloatingLabel">-->
+         <android.support.design.widget.TextInputLayout
+             android:id="@+id/input_layout_password"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content">
 
-            <android.support.design.widget.TextInputEditText
-                android:id="@+id/editTextEmail"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textEmailAddress"
-                android:theme="@style/EditText"/>
+             <EditText
+                 android:id="@+id/input_password"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:inputType="textPassword"
+                 android:hint="@string/hint_password" />
+         </android.support.design.widget.TextInputLayout>
 
-        </android.support.design.widget.TextInputLayout>
+         <android.support.design.widget.TextInputLayout
+             android:id="@+id/input_layout_phone"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content">
 
-        <android.support.design.widget.TextInputLayout
-            android:id="@+id/txtPassword"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:hint="Contraseña">
-            <!--app:hintTextAppearance="@style/FloatingLabel">-->
+             <EditText
+                 android:id="@+id/input_phone"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:inputType="text|phone"
+                 android:hint="@string/hint_phone"/>
+         </android.support.design.widget.TextInputLayout>
 
-            <android.support.design.widget.TextInputEditText
-                android:id="@+id/editTextPassword"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textPassword"
-                android:theme="@style/EditText"/>
 
-        </android.support.design.widget.TextInputLayout>
+         <android.support.design.widget.TextInputLayout
+             android:id="@+id/input_layout_sex"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content">
 
-        <android.support.design.widget.TextInputLayout
-            android:id="@+id/txtTelefono"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:hint="Telefono">
-            <!--app:hintTextAppearance="@style/FloatingLabel">-->
+             <EditText
+                 android:id="@+id/input_sex"
+                 android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:inputType="textAutoComplete"
+                 android:hint="@string/hint_sex"/>
+         </android.support.design.widget.TextInputLayout>
 
-            <android.support.design.widget.TextInputEditText
-                android:id="@+id/editTextTelefono"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="text"
-                android:theme="@style/EditText"/>
-
-        </android.support.design.widget.TextInputLayout>
 
         <Button
             android:layout_width="wrap_content"
@@ -95,4 +116,6 @@
             android:layout_weight="1" />
 
     </LinearLayout>
-</RelativeLayout>
+<!--</RelativeLayout>-->
+
+</android.support.design.widget.CoordinatorLayout>
